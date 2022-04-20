@@ -1,3 +1,4 @@
+import introducao.Celular;
 import introducao.Pessoa;
 
 public class App {
@@ -31,5 +32,14 @@ public class App {
 
         zezinho.mostraCPF();
         luizinho.mostraCPF();
+
+        Celular startak = new Celular("(47) 99999-5555");
+        startak.setModelo("PT 550");
+        startak.setMarca("Motorola");
+
+        startak.setDono(zezinho);
+        
+
+        
     }
 }
