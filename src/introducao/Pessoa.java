@@ -3,23 +3,44 @@ package introducao;
 public class Pessoa {
     //Atributos (variaveis) automaticamente inicializados com o valor padrão
     //escopo de vida de instancia
-    private String nome;
-    public int idade;
-    public String CPF;
-    public float altura;
+    //ENCAPSULAMENTO - POJO - Plain old Java object
+    private String nomeCompleto;
+    private int idade;
+    private String CPF;
+    private float altura;
     
+    
+    public float getAltura() {
+        return altura;
+    }
+    public void setAltura(float altura) {
+        this.altura = altura;
+    }
+    public String getCPF() {
+        return CPF;
+    }
+    public void setCPF(String cPF) {
+        CPF = cPF;
+    }
+    public int getIdade() {
+        return idade;
+    }
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
     //GETTER e SETTER
     public String getNome(){
-        return this.nome;
+        return this.nomeCompleto;
     }
     public void setNome(String nome){
-        this.nome = nome;
+        this.nomeCompleto = nome;
     }
+    
     //comportamento
     //CONSTRUTOR - inicializar um objeto e definir valores obrigatorios
     public Pessoa(String nome){ //escopo de vida local
         System.out.println("CONSTRUTOR:" + nome);
-        this.nome = nome;
+        this.nomeCompleto = nome;
     }//ate aqui
     
     //metodo (função)

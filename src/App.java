@@ -9,20 +9,20 @@ public class App {
         //instanciação
         Pessoa zezinho = new Pessoa("Laranja");
         zezinho.setNome("Zezinho da Silva Sauro");
-        zezinho.CPF = "555.555.555-55";
-        zezinho.altura = 1.8f;
-        zezinho.idade = 22;
+        zezinho.setCPF("555.555.555-55");
+        zezinho.setAltura(1.8f);
+        zezinho.setIdade(22);
 
         Pessoa luizinho = new Pessoa("Limão");
         //luizinho.nome = "Luizinho da Silva Sauro Jr";
 
         System.out.println(zezinho.getNome());
-        System.out.println(zezinho.CPF);
-        System.out.println(zezinho.altura);
-        System.out.println(zezinho.idade);
+        System.out.println(zezinho.getCPF());
+        System.out.println(zezinho.getAltura());
+        System.out.println(zezinho.getIdade());
         System.out.println(luizinho.getNome());
-        System.out.println(luizinho.CPF);
-        System.out.println(luizinho.idade);
+        System.out.println(luizinho.getCPF());
+        System.out.println(luizinho.getIdade());
 
         String guardaResultado = zezinho.podeDirigir();
         System.out.println(guardaResultado);
