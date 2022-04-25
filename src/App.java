@@ -1,3 +1,4 @@
+import introducao.Aplicativo;
 import introducao.Celular;
 import introducao.Pessoa;
 
@@ -39,7 +40,16 @@ public class App {
 
         startak.setDono(zezinho);
         
+        Aplicativo app1 = new Aplicativo("Angry Birds");
+        Aplicativo app2 = new Aplicativo("Whatsapp");
+        Aplicativo app3 = new Aplicativo("Tiktok");
+        Aplicativo app4 = new Aplicativo("Instagram");
 
+        startak.getListaAplicativos().add(app1);
+        startak.getListaAplicativos().add(app2);
+        startak.getListaAplicativos().add(app3);
+        startak.getListaAplicativos().add(app4);
         
+
     }
 }

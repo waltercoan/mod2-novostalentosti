@@ -1,11 +1,31 @@
 package introducao;
 
+
+
+/**
+ * @author Walter Silvestre Coan
+ * O objetivo desta classe e armazenar os dados do celular
+ */
+
+//POJO - Plain old java object
+
+import java.util.ArrayList;
 public class Celular {
     private String numero;
     private String marca;
     private String modelo;
     private Pessoa dono;
+    private ArrayList listaAplicativos = new ArrayList();
 
+    
+
+    public ArrayList getListaAplicativos() {
+        return listaAplicativos;
+    }
+
+    public void setListaAplicativos(ArrayList listaAplicativos) {
+        this.listaAplicativos = listaAplicativos;
+    }
 
     public Pessoa getDono() {
         return dono;

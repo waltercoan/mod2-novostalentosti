@@ -33,14 +33,17 @@ public class Pessoa {
         return this.nomeCompleto;
     }
     public void setNome(String nome){
-        this.nomeCompleto = nome;
+        if(!nome.equals("")){
+            this.nomeCompleto = nome;
+        }
     }
     
     //comportamento
     //CONSTRUTOR - inicializar um objeto e definir valores obrigatorios
     public Pessoa(String nome){ //escopo de vida local
         System.out.println("CONSTRUTOR:" + nome);
-        this.nomeCompleto = nome;
+        //this.nomeCompleto = nome;
+        setNome(nome);
     }//ate aqui
     
     //metodo (função)
