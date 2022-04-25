@@ -15,15 +15,14 @@ public class Celular {
     private String marca;
     private String modelo;
     private Pessoa dono;
-    private ArrayList listaAplicativos = new ArrayList();
+    //OPERADOR DIAMANTE - GENERICS
+    private ArrayList<Aplicativo> listaAplicativos = new ArrayList<>();
 
-    
-
-    public ArrayList getListaAplicativos() {
+    public ArrayList<Aplicativo> getListaAplicativos() {
         return listaAplicativos;
     }
 
-    public void setListaAplicativos(ArrayList listaAplicativos) {
+    public void setListaAplicativos(ArrayList<Aplicativo> listaAplicativos) {
         this.listaAplicativos = listaAplicativos;
     }
 
