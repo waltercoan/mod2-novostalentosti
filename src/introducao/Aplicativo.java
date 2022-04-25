@@ -2,7 +2,7 @@ package introducao;
 
 public class Aplicativo {
     //ENCAPSULAMENTO = atributo privado e metodo get/set publico
-    private String nome;
+    String nome;
 
     public Aplicativo(String nome) {
         setNome(nome);        

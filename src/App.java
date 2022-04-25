@@ -45,15 +45,19 @@ public class App {
         Aplicativo app3 = new Aplicativo("Tiktok");
         Aplicativo app4 = new Aplicativo("Instagram");
 
-        startak.getListaAplicativos().add(app1);
-        startak.getListaAplicativos().add(app2);
-        startak.getListaAplicativos().add(app3);
-        startak.getListaAplicativos().add(app4);
+        startak.getListaAplicativos().add(app1); //0Angry Birds
+        startak.getListaAplicativos().add(app2);//1Whatsapp
+        startak.getListaAplicativos().add(app3); // 2 Tiktok - morreu
+        startak.getListaAplicativos().add(app4); // 2 Instagram
         /*startak.getListaAplicativos().add("Laranja");
         startak.getListaAplicativos().add("Banana");
         startak.getListaAplicativos().add(1234);
         startak.getListaAplicativos().add(1200.05f);
         startak.getListaAplicativos().add(true);*/
+
+        startak.getListaAplicativos().remove(2);
+        startak.getListaAplicativos().set(2, new Aplicativo("Grobopray"));
+        System.out.println(startak.getListaAplicativos().indexOf(app1));
         
         for(int i=0; i < startak.getListaAplicativos().size() ; i++){
             System.out.println(startak.getListaAplicativos().get(i).getNome());
@@ -62,6 +66,5 @@ public class App {
         for(Aplicativo umApp : startak.getListaAplicativos()){
             System.out.println(umApp);
         }
-
     }
 }

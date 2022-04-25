@@ -15,6 +15,8 @@ public class Celular {
     private String marca;
     private String modelo;
     private Pessoa dono;
+
+
     //OPERADOR DIAMANTE - GENERICS
     private ArrayList<Aplicativo> listaAplicativos = new ArrayList<>();
 
