@@ -1,5 +1,5 @@
 package introducao.bichos;
 
-public class Cachorro {
+public class Cachorro extends Mamifero{
     
 }
