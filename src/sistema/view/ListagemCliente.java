@@ -39,8 +39,11 @@ public class ListagemCliente extends JFrame {
         jpnSul.add(btnExcluir);
         
         btnNovo.addActionListener(controller);
+        btnNovo.setName("btnNovo");
         btnAlterar.addActionListener(controller);
+        btnAlterar.setName("btnAlterar");
         btnExcluir.addActionListener(controller);
+        btnExcluir.setName("btnExcluir");
 
         jpnCentro = new JScrollPane(tabela);
         jpnCentro.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
