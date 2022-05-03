@@ -8,9 +8,26 @@ public class Livro {
 
     
     public String toString(){
-        return "Titulo: " + getTitulo() + " Valor: " + getValor() +
-            " Esgotado: " + isEsgotado() + " Autor Nome: " + getEscritor().getNome() +
-            " Autor Data Nascimento " + getEscritor().getDataNascimento();
+
+        StringBuilder montadorString = new StringBuilder();
+        montadorString.append("Titulo: ");
+        montadorString.append(getTitulo());
+        montadorString.append("Valor: ");
+        montadorString.append(getValor());
+        montadorString.append("Esgotado: ");
+        montadorString.append(isEsgotado());
+        montadorString.append("Autor Nome: ");
+        montadorString.append(getEscritor().getNome());
+        montadorString.append("Autor Data Nascimento ");
+        montadorString.append(getEscritor().getDataNascimento());
+
+        return montadorString.toString();
+        
+        /*return "Titulo: " + getTitulo() + 
+               " Valor: " + getValor() +
+               " Esgotado: " + isEsgotado() + 
+               " Autor Nome: " + getEscritor().getNome() +
+               " Autor Data Nascimento " + getEscritor().getDataNascimento();*/
     }
 
     public Autor getEscritor() {
