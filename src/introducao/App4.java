@@ -22,7 +22,7 @@ public class App4 {
         //Autor autor = new Autor("Deitel",new Date(1945,01,01));
         //Para criar a data do jeito certo
         Calendar calendario = GregorianCalendar.getInstance();
-        calendario.set(1945,01,01);
+        calendario.set(1945,0,01);
         Autor autor = new Autor("Deitel",calendario.getTime());
         livro1.setEscritor(autor);
 
@@ -47,6 +47,10 @@ public class App4 {
         Autor autor3 = new Autor("Grady Booch", null);
         livro3.setEscritor(autor3);
         System.out.println(livro3);
+
+
+        
+
 
     }
 }
