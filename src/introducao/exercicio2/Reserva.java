@@ -10,6 +10,15 @@ public class Reserva {
     private Quarto quarto;
     private ArrayList<Hospede> listaHospedes = new ArrayList<>();
 
+    public String toString(){
+        StringBuilder montadorString = new StringBuilder();
+        montadorString.append("Reserva: " + numero);
+        //montadorString.append(String.format("Reserva: %d", numero));
+        montadorString.append("Data Inicial: " + dataInicial);
+        montadorString.append("Data Final: " + dataFinal);
+
+        return montadorString.toString();
+    }
 
     public Quarto getQuarto() {
         return quarto;
