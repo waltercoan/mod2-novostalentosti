@@ -33,6 +33,7 @@ public class App5 {
         reserva1.setQuarto(quarto1);
         reserva1.getListaHospedes().add(pessoa1);
         reserva1.getListaHospedes().add(pessoa2);
+        
         System.out.println(reserva1);
 
 

@@ -33,9 +33,6 @@ public class Reserva {
             montadorString.append("\nHospede - CPF: " + umHospede.getCPF());
         }
         */
-
-
-
         return montadorString.toString();
     }
 
