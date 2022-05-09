@@ -27,8 +27,14 @@ public class Pedido {
     }
 
     public float calcValorTotal(){
-        //TODO - preciso terminar
-        return 0;
+        //para cada umItem dentro de listaItens -> pega o cara e entra no bloco
+        float valorTotal = 0;
+        for(ItemPedido umItem : listaItens){
+            var valorItem = umItem.getQuantidade() * umItem.getValorVenda();
+            valorTotal += valorItem;
+            //valorTotal = valorTotal + valorItem;
+        }
+        return valorTotal;
     }
 
     public long getId() {

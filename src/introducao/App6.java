@@ -47,6 +47,6 @@ public class App6 {
 
 
         var result = pedido1.calcValorTotal();
-        System.out.println(String.format("O Total do pedido e: %f", result));
+        System.out.println(String.format("O Total do pedido e: %.2f", result));
     }
 }
