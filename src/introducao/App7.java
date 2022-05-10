@@ -5,6 +5,7 @@ import java.util.GregorianCalendar;
 import introducao.exercicio4.EmpresaCliente;
 import introducao.exercicio4.Funcionario;
 import introducao.exercicio4.PessoaFisica;
+import introducao.exercicio4.Pessoa;
 
 public class App7 {
     public static void main(String[] args) {
@@ -35,6 +36,8 @@ public class App7 {
         System.out.println(pessoa1.getCPF());
         System.out.println(pessoa1.getNome());
         System.out.println(pessoa1.getTelefone());
+
+        Pessoa pessoa3;
 
     }
 }
