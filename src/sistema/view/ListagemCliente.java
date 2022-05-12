@@ -19,9 +19,12 @@ public class ListagemCliente extends JFrame {
     private JButton btnNovo = new JButton("Novo");
     private JButton btnAlterar = new JButton("Alterar");
     private JButton btnExcluir = new JButton("Excluir");
-    private TabelaClienteModel tabelaModel = new TabelaClienteModel();
-    private JTable tabela = new JTable(tabelaModel);
+    
     private ListagemClienteController controller = new ListagemClienteController();
+    
+    private TabelaClienteModel tabelaModel = new TabelaClienteModel(controller);
+    private JTable tabela = new JTable(tabelaModel);
+    
 
     public ListagemCliente() {
         setSize(500,400);

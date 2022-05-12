@@ -2,10 +2,21 @@ package sistema.model;
 
 import javax.swing.table.AbstractTableModel;
 
+import sistema.controller.ListagemClienteController;
+
 public class TabelaClienteModel extends AbstractTableModel {
+    
+  
+    private ListagemClienteController controller;
+
+    public TabelaClienteModel(ListagemClienteController controller) {
+        this.controller = controller;
+    }
+
+
     @Override
     public int getRowCount() {
-        return 10;
+        return controller.getAllClientes().size();
     }
     @Override
     public int getColumnCount() {
@@ -13,7 +24,14 @@ public class TabelaClienteModel extends AbstractTableModel {
     }
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        return "Não acredito";
-
+        var umCliente = controller.getAllClientes().get(rowIndex);
+        switch (columnIndex) {
+            case 0:
+                return umCliente.getId();                
+            case 1:
+                return umCliente.getNome();
+            default:
+                return "";
+        }
     }
 }
