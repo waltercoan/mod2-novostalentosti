@@ -13,9 +13,7 @@ public class TabelaClienteModel extends AbstractTableModel {
     }
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        if(rowIndex == 0 && columnIndex == 0){
-            return "Não acredito";
-        }
-        return "";
+        return "Não acredito";
+
     }
 }
