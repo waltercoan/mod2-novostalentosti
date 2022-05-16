@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 
 import sistema.entity.Cliente;
 import sistema.service.ClienteService;
+import sistema.view.FormularioCliente;
 
 public class ListagemClienteController implements ActionListener{
     private ClienteService service = new ClienteService();
@@ -35,7 +36,8 @@ public class ListagemClienteController implements ActionListener{
     }
 
     private void btnNovoClique(){
-        JOptionPane.showMessageDialog(null, "BOTAO NOVO");    
+        //JOptionPane.showMessageDialog(null, "BOTAO NOVO");    
+        FormularioCliente formulario = new FormularioCliente();
     }
     private void btnAlterarClique(){
         JOptionPane.showMessageDialog(null, "BOTAO ALTERAR");    

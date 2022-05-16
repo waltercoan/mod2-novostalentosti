@@ -21,4 +21,8 @@ public class ClienteService {
     public ArrayList<Cliente> getAllClientes(){
         return listaClientes;
     }
+    public Cliente save(Cliente cliente){
+        listaClientes.add(cliente);
+        return cliente;
+    }
 }

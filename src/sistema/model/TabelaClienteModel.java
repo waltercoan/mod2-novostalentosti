@@ -10,7 +10,8 @@ public class TabelaClienteModel extends AbstractTableModel {
     
   
     private ListagemClienteController controller;
-
+    private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    
     public TabelaClienteModel(ListagemClienteController controller) {
         this.controller = controller;
     }
@@ -24,7 +25,7 @@ public class TabelaClienteModel extends AbstractTableModel {
     public int getColumnCount() {
         return 4;
     }
-    private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         var umCliente = controller.getAllClientes().get(rowIndex);
