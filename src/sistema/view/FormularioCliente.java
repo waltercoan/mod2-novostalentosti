@@ -8,8 +8,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 
+import sistema.entity.Cliente;
+
 import java.awt.GridBagLayout;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.awt.GridBagConstraints;
 
 public class FormularioCliente extends JDialog{
@@ -97,4 +100,20 @@ public class FormularioCliente extends JDialog{
         jpnCentro.add(txtData,cons);
 
     }
+
+    public Cliente atualiza(Cliente cliente){
+        //atualiza com os dados da tela (binding)
+        cliente.setId(Long.parseLong(txtId.getText()));
+        cliente.setNome(txtNome.getText());
+        cliente.setCPF(txtCPF.getText());
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            cliente.setDataNascimento(sdf.parse(txtData.getText()));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return cliente;
+    }
+
+
 }
