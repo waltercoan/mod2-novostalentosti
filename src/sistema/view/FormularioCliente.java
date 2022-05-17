@@ -5,6 +5,8 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
 
 public class FormularioCliente extends JDialog{
     private JPanel jpnCentro = new JPanel();
@@ -15,7 +17,7 @@ public class FormularioCliente extends JDialog{
     private JTextField txtNome = new JTextField(40);
     public FormularioCliente() {
         setSize(400,300);
-        setModal(true);
+        setModal(true); //bloquear o usuário na JDialog
         criaPaineis(); // nao esquece de chamar o metodo aqui!!!
         setVisible(true);
     }
@@ -24,10 +26,29 @@ public class FormularioCliente extends JDialog{
         jpnBotao.add(btnOK);
         jpnBotao.add(btnCancelar);
 
+        jpnCentro.setLayout(new GridBagLayout());
+        GridBagConstraints cons = new GridBagConstraints();
+        cons.fill = GridBagConstraints.HORIZONTAL;
+        
         add(jpnCentro, "Center");
-        jpnCentro.add(new JLabel("Código:"));
-        jpnCentro.add(txtId);
-        jpnCentro.add(new JLabel("Nome:"));
-        jpnCentro.add(txtNome);
+        cons.gridx = 0; //coluna 0
+        cons.gridy = 0; //linha 0
+        cons.weightx = 0.20; //largura em percentual
+        jpnCentro.add(new JLabel("Código:"), cons);
+        
+        cons.gridx = 1; //coluna 1
+        cons.gridy = 0; //linha 0
+        cons.weightx = 0.80; //largura em percentual
+        jpnCentro.add(txtId,cons);
+
+        cons.gridx = 0; //coluna 0
+        cons.gridy = 1; //linha 1
+        cons.weightx = 0.20; //largura em percentual
+        jpnCentro.add(new JLabel("Nome:"),cons);
+
+        cons.gridx = 1; //coluna 1
+        cons.gridy = 1; //linha 1
+        cons.weightx = 0.80; //largura em percentual
+        jpnCentro.add(txtNome,cons);
     }
 }
