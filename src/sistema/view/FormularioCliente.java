@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 
+import sistema.controller.FormularioClienteController;
 import sistema.entity.Cliente;
 
 import java.awt.GridBagLayout;
@@ -26,8 +27,17 @@ public class FormularioCliente extends JDialog{
     private JFormattedTextField txtCPF;
     private MaskFormatter mascaraData;
     private JFormattedTextField txtData;
-    
-    public FormularioCliente() {
+    private FormularioClienteController controller = new FormularioClienteController(this);
+    private Cliente cliente = new Cliente();
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+    public FormularioCliente(Cliente cliente) {
+        this.cliente = cliente;
         setSize(400,300);
         setModal(true); //bloquear o usuário na JDialog
         criaPaineis(); // nao esquece de chamar o metodo aqui!!!
@@ -35,7 +45,11 @@ public class FormularioCliente extends JDialog{
     }
     private void criaPaineis(){
         add(jpnBotao,"South");
+        btnOK.addActionListener(controller);
+        btnOK.setName("btnOK");
         jpnBotao.add(btnOK);
+        btnCancelar.addActionListener(controller);
+        btnCancelar.setName("btnCancelar");
         jpnBotao.add(btnCancelar);
 
         jpnCentro.setLayout(new GridBagLayout());

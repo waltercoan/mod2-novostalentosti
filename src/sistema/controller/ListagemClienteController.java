@@ -36,8 +36,10 @@ public class ListagemClienteController implements ActionListener{
     }
 
     private void btnNovoClique(){
-        //JOptionPane.showMessageDialog(null, "BOTAO NOVO");    
-        FormularioCliente formulario = new FormularioCliente();
+        //JOptionPane.showMessageDialog(null, "BOTAO NOVO");
+        Cliente novoCliente = new Cliente();
+        FormularioCliente formulario = new FormularioCliente(novoCliente);
+        service.save(novoCliente);
     }
     private void btnAlterarClique(){
         JOptionPane.showMessageDialog(null, "BOTAO ALTERAR");    
