@@ -33,6 +33,11 @@ public class ListagemCliente extends JFrame {
         criaPaineis(); //chama o metodo!!!!
         setVisible(true);
     }
+
+    public void atualizaTabela(){
+        tabelaModel.fireTableDataChanged();
+    }
+
     private void criaPaineis(){
         //import java.awt.FlowLayout;
         jpnSul.setLayout(new FlowLayout(FlowLayout.LEFT));
