@@ -48,7 +48,7 @@ public class App8 {
         agenda2.setId(2);
         agenda2.setMedico(medico2);
 
-        Calendar calendario = new GregorianCalendar().getInstance();
+        Calendar calendario = GregorianCalendar.getInstance();
         var agendamento1 = new Agendamento();
         agendamento1.setId(1);
         agendamento1.setMedico(medico1);
