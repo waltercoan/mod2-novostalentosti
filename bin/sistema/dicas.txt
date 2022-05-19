@@ -1,0 +1,15 @@
+- A tabela JTable não atualizava automatico depois de inserir um novo cliente
+Solução: O controlador da classe ListagemCliente precisa receber pelo construtor 
+a instância da classe ListagemCliente. No método de clique do botão Novo, no final 
+do codigo deverá ser chamado a partir da referencia da ListagemCliente o método 
+atualizaTabela();
+
+- Alterar um registro do cliente
+Solução: No botão ALTERAR da ListagemClienteController voce precisa solicitar para 
+a JTable (sugiro através de um método) qual o número da linha que o usuário selecionou.
+Utilizando a posição voce vai recuperar o objeto Cliente do ClienteService, e 
+instanciar a tela de FormularioCliente passando a referencia do Cliente. No construtor
+do formulário voce precisa atualizar os valores dos campos de tela com os atributos
+da referencia do cliente. No ClienteService o método SAVE somente deve inserir um 
+novo cliente se o ID for igual a ZERO, caso contrário ele deve procurar a instância
+de cliente dentro da lista, e fazer a atualização.
