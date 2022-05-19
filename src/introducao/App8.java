@@ -55,6 +55,7 @@ public class App8 {
         agendamento1.setPaciente(paciente1);
         calendario.set(2022, 05, 19 , 13, 00);
         agendamento1.setDataHora(calendario.getTime());
+        agenda1.getListaAgendamentos().add(agendamento1);
 
         var agendamento2 = new Agendamento();
         agendamento2.setId(2);
@@ -62,6 +63,7 @@ public class App8 {
         agendamento2.setPaciente(paciente1);
         calendario.set(2022, 05, 19 , 14, 00);
         agendamento2.setDataHora(calendario.getTime());
+        agenda2.getListaAgendamentos().add(agendamento2);
 
         var agendamento3 = new Agendamento();
         agendamento3.setId(3);
@@ -69,6 +71,7 @@ public class App8 {
         agendamento3.setPaciente(paciente2);
         calendario.set(2022, 05, 19 , 15, 00);
         agendamento3.setDataHora(calendario.getTime());
+        agenda1.getListaAgendamentos().add(agendamento3);
 
         var agendamento4 = new Agendamento();
         agendamento4.setId(4);
@@ -76,6 +79,7 @@ public class App8 {
         agendamento4.setPaciente(paciente2);
         calendario.set(2022, 05, 19 , 16, 00);
         agendamento4.setDataHora(calendario.getTime());
+        agenda2.getListaAgendamentos().add(agendamento4);
 
         var agendamento5 = new Agendamento();
         agendamento5.setId(5);
@@ -83,6 +87,7 @@ public class App8 {
         agendamento5.setPaciente(paciente3);
         calendario.set(2022, 05, 19 , 17, 00);
         agendamento5.setDataHora(calendario.getTime());
+        agenda1.getListaAgendamentos().add(agendamento5);
 
         var agendamento6 = new Agendamento();
         agendamento6.setId(6);
@@ -90,6 +95,7 @@ public class App8 {
         agendamento6.setPaciente(paciente3);
         calendario.set(2022, 05, 19 , 18, 00);
         agendamento6.setDataHora(calendario.getTime());
+        agenda2.getListaAgendamentos().add(agendamento6);
 
         var agendamento7 = new Agendamento();
         agendamento7.setId(7);
@@ -97,6 +103,7 @@ public class App8 {
         agendamento7.setPaciente(paciente4);
         calendario.set(2022, 05, 19 , 19, 00);
         agendamento7.setDataHora(calendario.getTime());
+        agenda1.getListaAgendamentos().add(agendamento7);
 
         var agendamento8 = new Agendamento();
         agendamento8.setId(8);
@@ -104,5 +111,9 @@ public class App8 {
         agendamento8.setPaciente(paciente4);
         calendario.set(2022, 05, 19 , 20, 00);
         agendamento8.setDataHora(calendario.getTime());
+        agenda2.getListaAgendamentos().add(agendamento8);
+
+        agenda1.imprimirAgenda();
+        agenda2.imprimirAgenda();
     }
 }
