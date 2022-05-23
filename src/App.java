@@ -1,6 +1,7 @@
 import introducao.Aplicativo;
 import introducao.Celular;
 import introducao.Pessoa;
+import static introducao.Pessoa.mostraRaca;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -14,8 +15,17 @@ public class App {
         zezinho.setCPF("555.555.555-55");
         zezinho.setAltura(1.8f);
         zezinho.setIdade(22);
+        zezinho.setRaca("A");
+        System.out.println(zezinho.getNome() + " Raça: " + zezinho.getRaca());
+        zezinho.mostraRaca();
+        Pessoa.mostraRaca();
+
 
         Pessoa luizinho = new Pessoa("Limão");
+        //luizinho.setRaca("B");
+        System.out.println(luizinho.getNome() + " Raça: " + luizinho.getRaca());
+        System.out.println(zezinho.getNome() + " Raça: " + zezinho.getRaca());
+
         //luizinho.nome = "Luizinho da Silva Sauro Jr";
 
         System.out.println(zezinho.getNome());

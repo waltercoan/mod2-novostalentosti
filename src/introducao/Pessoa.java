@@ -8,6 +8,18 @@ public class Pessoa {
     private int idade;
     private String CPF;
     private float altura;
+    private static String raca;
+
+    public static void mostraRaca(){
+        System.out.println(raca);
+    }
+
+    public String getRaca() {
+        return raca;
+    }
+    public void setRaca(String raca) {
+        this.raca = raca;
+    }
     
     
     public float getAltura() {
