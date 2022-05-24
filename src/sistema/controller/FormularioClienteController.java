@@ -32,10 +32,14 @@ public class FormularioClienteController
         formCliente.dispose();
     }
     private void btnOKClique() {
-        var cliente = formCliente.getCliente();
-        formCliente.atualiza(cliente);
-        if(validador(cliente)){
-            formCliente.dispose();
+        try{
+            var cliente = formCliente.getCliente();
+            formCliente.atualiza(cliente);
+            if(validador(cliente)){
+                formCliente.dispose();
+            }
+        }catch (NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Campo numérico não informado");
         }
     }
     private boolean validador(Cliente cliente){
