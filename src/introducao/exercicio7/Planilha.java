@@ -2,6 +2,8 @@ package introducao.exercicio7;
 
 import java.util.ArrayList;
 
+import javax.swing.event.ListDataEvent;
+
 public class Planilha {
 
     private ArrayList<ContaDeLuz> listaContasDeLuz = new ArrayList<>();
@@ -38,9 +40,24 @@ public class Planilha {
     }
 
     public float calcularMaiorValor(){
-        return 0;
+        float omaior = 0;
+        for(ContaDeLuz umaConta : listaContasDeLuz){
+            if(omaior < umaConta.getValorDaConta()){
+                omaior = umaConta.getValorDaConta();
+            }
+        }
+        return omaior;
     }
     public float calcularMenorValor(){
-        return 0;
+        float omenor = 0;
+        if(listaContasDeLuz.size() >= 1){ // verificar se existe pelo menos uma conta
+            omenor = listaContasDeLuz.get(0).getValorDaConta();
+        }
+        for(ContaDeLuz umaConta : listaContasDeLuz){
+            if(omenor > umaConta.getValorDaConta()){
+                omenor = umaConta.getValorDaConta();
+            }
+        }
+        return omenor;
     }
 }
