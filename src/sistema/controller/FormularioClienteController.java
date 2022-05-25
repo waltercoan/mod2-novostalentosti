@@ -6,6 +6,7 @@ import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 
 import sistema.entity.Cliente;
+import sistema.exception.ValorInvalidoException;
 import sistema.view.FormularioCliente;
 
 
@@ -35,19 +36,20 @@ public class FormularioClienteController
         try{
             var cliente = formCliente.getCliente();
             formCliente.atualiza(cliente);
-            if(validador(cliente)){
-                formCliente.dispose();
-            }
-        }catch (NumberFormatException e){
-            JOptionPane.showMessageDialog(null, "Campo numérico não informado");
+            validador(cliente);
+            formCliente.dispose();
+        
+        } catch (ValorInvalidoException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+            e.printStackTrace();
         }
     }
-    private boolean validador(Cliente cliente){
+    private void validador(Cliente cliente) throws ValorInvalidoException{
         if(cliente.getNome() == null || cliente.getNome().isEmpty()){
-            JOptionPane.showMessageDialog(null, "O nome não pode ser deixado branco");
-            return false;
+            throw new ValorInvalidoException("O nome não pode ser deixado branco", 
+                                            null,
+                                            "NOME");
         }
-        return true;
     }
     
 }
