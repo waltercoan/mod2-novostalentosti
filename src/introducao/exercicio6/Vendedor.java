@@ -1,9 +1,17 @@
 package introducao.exercicio6;
 
-public class Vendedor {
+public class Vendedor extends Funcionario{
     private float percComissao;
     private float metaVenda;
-    
+    private EquipeDeVendas equipe;
+
+
+    public EquipeDeVendas getEquipe() {
+        return equipe;
+    }
+    public void setEquipe(EquipeDeVendas equipe) {
+        this.equipe = equipe;
+    }
     public float getPercComissao() {
         return percComissao;
     }

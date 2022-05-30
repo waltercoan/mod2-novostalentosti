@@ -1,6 +1,6 @@
 package introducao.exercicio6;
 
-public class Gerente {
+public class Gerente extends Funcionario{
     private String setor;
 
     public String getSetor() {
