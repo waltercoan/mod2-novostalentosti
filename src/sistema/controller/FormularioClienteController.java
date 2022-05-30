@@ -50,6 +50,9 @@ public class FormularioClienteController
                                             null,
                                             "NOME");
         }
+        //criar uma validação para cada campo de tela do cliente
+        //alterar a mensagem de tela JOptionPane: transformar ela numa mensagem de erro,
+        // mostrar o campo que gerou o erro
     }
     
 }
