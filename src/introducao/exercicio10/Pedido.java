@@ -14,8 +14,9 @@ public class Pedido {
             total = total + umProduto.getValor();
         }*/
         /*
-        getListaProdutos().stream().mapToDouble(o -> o.getValor()).sum();
+        total = getListaProdutos().stream().map(o->o.getValor()).reduce(0f, Float::sum);
         */
+        
         return total;
     }
     public ArrayList<Produto> getListaProdutos() {
