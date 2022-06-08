@@ -23,10 +23,29 @@ public class Cidade {
         this.nome = nome;
     }
     public int contaApartamento(){
-        return 0;
+        int contador = 0;
+        //1 criar um bloco de repetição para
+        //acessar um municipe de cada vez
+        //for( var_controle = val_ini ; condição ; incre/decre) { corpo }
+        for(int i=0; i < listaMunicipes.size(); i++){
+            //A cada volta eu tenho um municipe na variavel abaixo
+            var umMunicipe = listaMunicipes.get(i);
+            //TESTAR - o tipo da residencia dessa pessoa
+            if(umMunicipe.getTipo().getNome().equals("Apartamento")){
+                contador = contador + 1;
+            }
+        }
+        return contador;
     }
     public int contaCasa(){
-        return 0;
+        int contador = 0;
+        //FOR EACH - PARA CADA ELEMENTO
+        for(var umMunicipe : listaMunicipes){
+            if(umMunicipe.getTipo().getNome().equals("Casa")){
+                contador++;
+            }
+        }
+        return contador;
     }
     public static void main(String[] args) {
         Cidade cidade1 = new Cidade();
