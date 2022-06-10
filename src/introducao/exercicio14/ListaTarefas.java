@@ -7,7 +7,13 @@ public class ListaTarefas {
 
     
     public float calculaTempoTotal(){
-        return 0;
+        float total = 0;
+        
+        for(var umaTarefa : listaTarefas){
+            total = total + umaTarefa.getTipo().getTempo();
+        }
+
+        return total;
     }
     public ArrayList<Tarefa> getListaTarefas() {
         return listaTarefas;
@@ -64,6 +70,8 @@ public class ListaTarefas {
         tar5.setTipo(tipo3);
         tar6.setTipo(tipo3);
 
+        var guardar = lista1.calculaTempoTotal();
+        System.out.println("O Tempo total e " + guardar);
 
 
     }
