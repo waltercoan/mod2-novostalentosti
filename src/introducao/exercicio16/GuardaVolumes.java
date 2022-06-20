@@ -16,7 +16,7 @@ public class GuardaVolumes {
 
         for(var umItem : listaItens){
             montador.append("Item: " + umItem.getNome() + "\n");
-            montador.append("Item: " + 
+            montador.append("Proprietario: " + 
                 umItem.getProprietario().getNome() + "\n");
         }
 
