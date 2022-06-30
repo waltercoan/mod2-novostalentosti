@@ -22,7 +22,7 @@ public class ClienteDAO {
                 novoCliente.setId(rs.getLong("id"));
                 novoCliente.setNome(rs.getString("nome"));
                 novoCliente.setCPF(rs.getString("cpf"));
-                //novoCliente.setDataNascimento(dataNascimento);
+                novoCliente.setDataNascimento(rs.getDate("datanascimento"));
                 lista.add(novoCliente);
             }
         }catch (SQLException e){
@@ -30,5 +30,12 @@ public class ClienteDAO {
         }        
         return lista;
     }
+
+    public void save(Cliente cliente){
+        //olhar o ID cliente
+        //SE ID == 0 -> Executar insert no banco
+        //SE ID != 0 -> Executar update
+    }
+
 
 }
