@@ -29,4 +29,7 @@ public class ClienteService {
         clienteDAO.save(cliente);
         return cliente;
     }
+    public void remove(Cliente cliente) {
+        clienteDAO.delete(cliente.getId());
+    }
 }

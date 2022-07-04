@@ -10,9 +10,15 @@ import javax.swing.JOptionPane;
 import sistema.entity.Cliente;
 import sistema.service.ClienteService;
 import sistema.view.FormularioCliente;
+import sistema.view.ListagemCliente;
 
 public class ListagemClienteController implements ActionListener{
     private ClienteService service = new ClienteService();
+    private ListagemCliente view ;
+
+    public ListagemClienteController(ListagemCliente view) {
+        this.view = view;
+    }
 
 
     public ArrayList<Cliente> getAllClientes(){
@@ -40,13 +46,27 @@ public class ListagemClienteController implements ActionListener{
         Cliente novoCliente = new Cliente();
         FormularioCliente formulario = new FormularioCliente(novoCliente);
         service.save(novoCliente);
-        //aquiOHHH
+        view.atualizaTabela();
     }
     private void btnAlterarClique(){
-        JOptionPane.showMessageDialog(null, "BOTAO ALTERAR");    
+        //JOptionPane.showMessageDialog(null, "BOTAO ALTERAR");    
+        var clienteClicado = view.getCliente();
+        if(clienteClicado != null){
+            FormularioCliente formulario = new FormularioCliente(clienteClicado);
+            service.save(clienteClicado);
+            view.atualizaTabela();
+        }
     }
     private void btnExcluirClique(){
-        JOptionPane.showMessageDialog(null, "BOTAO Excluir");
+        //JOptionPane.showMessageDialog(null, "BOTAO Excluir");
+        var clienteClicado = view.getCliente();
+        if(clienteClicado != null){
+            var numBotao = JOptionPane.showConfirmDialog(null, "Tem certeza que você quer excluir o registro?");
+            if(numBotao == 0){
+                service.remove(clienteClicado);
+            }
+            view.atualizaTabela();
+        }
     }
 
 
