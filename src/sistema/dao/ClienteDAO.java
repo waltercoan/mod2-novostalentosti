@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import sistema.entity.Cliente;
@@ -38,6 +39,7 @@ public class ClienteDAO {
         //SE ID != 0 -> Executar update - UPDATE TABELA SET CAMPO=...
         try{
             var conn = ConexaoDB.getInstance().getConn();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             if(cliente.getId() == 0){
                 //INSERT
                 var sql = "INSERT INTO cliente(nome, cpf, datanascimento) " +
@@ -45,7 +47,7 @@ public class ClienteDAO {
                 PreparedStatement ps = conn.prepareStatement(sql);
                 ps.setString(1, cliente.getNome());
                 ps.setString(2, cliente.getCPF());
-                ps.setDate(3, (Date)cliente.getDataNascimento());
+                ps.setString(3, sdf.format(cliente.getDataNascimento()));
                 ps.executeUpdate();
             }else{
                 //UPDATE
@@ -54,13 +56,19 @@ public class ClienteDAO {
                 PreparedStatement ps = conn.prepareStatement(sql);
                 ps.setString(1, cliente.getNome());
                 ps.setString(2, cliente.getCPF());
-                ps.setDate(3, (Date)cliente.getDataNascimento());
+                ps.setString(3, sdf.format(cliente.getDataNascimento()));
                 ps.setLong(4, cliente.getId());
                 ps.executeUpdate();       
             }
         } catch (SQLException e){
             e.printStackTrace();
         }
+    }
+    public Cliente getClienteById(long id){
+        return null;
+    }
+    public void delete(long id){
+        
     }
 
 

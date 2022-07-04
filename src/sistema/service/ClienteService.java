@@ -26,6 +26,7 @@ public class ClienteService {
     }
     public Cliente save(Cliente cliente){
         //listaClientes.add(cliente);
+        clienteDAO.save(cliente);
         return cliente;
     }
 }
