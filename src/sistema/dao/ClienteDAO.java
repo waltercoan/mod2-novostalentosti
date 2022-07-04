@@ -86,12 +86,20 @@ public class ClienteDAO {
             e.printStackTrace();
         } catch (ParseException e) {
             e.printStackTrace();
-        }
+        } 
 
         return umCliente;
     }
-    public void delete(long id){
-
+    public void delete(long id) {
+        try{
+            var conn = ConexaoDB.getInstance().getConn();
+            var sql = "DELETE FROM cliente where id = ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setLong(1, id);
+            ps.executeUpdate();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 
 
