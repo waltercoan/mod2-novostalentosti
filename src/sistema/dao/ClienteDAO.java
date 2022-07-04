@@ -32,30 +32,34 @@ public class ClienteDAO {
         return lista;
     }
 
-    public void save(Cliente cliente) throws SQLException{
+    public void save(Cliente cliente) {
         //olhar o ID cliente
         //SE ID == 0 -> Executar insert no banco - INSERT INTO TABELA
         //SE ID != 0 -> Executar update - UPDATE TABELA SET CAMPO=...
-        var conn = ConexaoDB.getInstance().getConn();
-        if(cliente.getId() == 0){
-            //INSERT
-            var sql = "INSERT INTO cliente(nome, cpf, datanascimento) " +
-                " values(?,?,?)";
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, cliente.getNome());
-            ps.setString(2, cliente.getCPF());
-            ps.setDate(3, (Date)cliente.getDataNascimento());
-            ps.executeUpdate();
-        }else{
-            //UPDATE
-            var sql = "UPDATE cliente set nome = ?, cpf = ?, datanascimento = ? " +
-                    " where id = ?";
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, cliente.getNome());
-            ps.setString(2, cliente.getCPF());
-            ps.setDate(3, (Date)cliente.getDataNascimento());
-            ps.setLong(4, cliente.getId());
-            ps.executeUpdate();       
+        try{
+            var conn = ConexaoDB.getInstance().getConn();
+            if(cliente.getId() == 0){
+                //INSERT
+                var sql = "INSERT INTO cliente(nome, cpf, datanascimento) " +
+                    " values(?,?,?)";
+                PreparedStatement ps = conn.prepareStatement(sql);
+                ps.setString(1, cliente.getNome());
+                ps.setString(2, cliente.getCPF());
+                ps.setDate(3, (Date)cliente.getDataNascimento());
+                ps.executeUpdate();
+            }else{
+                //UPDATE
+                var sql = "UPDATE cliente set nome = ?, cpf = ?, datanascimento = ? " +
+                        " where id = ?";
+                PreparedStatement ps = conn.prepareStatement(sql);
+                ps.setString(1, cliente.getNome());
+                ps.setString(2, cliente.getCPF());
+                ps.setDate(3, (Date)cliente.getDataNascimento());
+                ps.setLong(4, cliente.getId());
+                ps.executeUpdate();       
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
         }
     }
 
