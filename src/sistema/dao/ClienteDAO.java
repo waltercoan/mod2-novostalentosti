@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
@@ -65,10 +66,32 @@ public class ClienteDAO {
         }
     }
     public Cliente getClienteById(long id){
-        return null;
+        Cliente umCliente = null;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            var conn = ConexaoDB.getInstance().getConn();
+            var sql = "SELECT * FROM cliente where id = ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setLong(1, id);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                umCliente = new Cliente();
+                //Hidratação do objeto
+                umCliente.setId(rs.getLong("id"));
+                umCliente.setNome(rs.getString("nome"));
+                umCliente.setCPF(rs.getString("cpf"));
+                umCliente.setDataNascimento(sdf.parse(rs.getString("datanascimento")));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return umCliente;
     }
     public void delete(long id){
-        
+
     }
 
 
