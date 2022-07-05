@@ -50,8 +50,10 @@ public class FormularioCliente extends JDialog{
             txtId.setText(String.valueOf(this.cliente.getId()));
             txtNome.setText(this.cliente.getNome());
             txtCPF.setText(this.cliente.getCPF());
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            txtData.setText(sdf.format(this.cliente.getDataNascimento()));
+            try{
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                txtData.setText(sdf.format(this.cliente.getDataNascimento()));
+            }catch (Exception e) {}
         }
     }
     private void criaPaineis(){
