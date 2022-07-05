@@ -42,7 +42,17 @@ public class FormularioCliente extends JDialog{
         setSize(400,300);
         setModal(true); //bloquear o usuário na JDialog
         criaPaineis(); // nao esquece de chamar o metodo aqui!!!
+        atualizaCampos();
         setVisible(true);
+    }
+    private void atualizaCampos(){
+        if(this.cliente != null){
+            txtId.setText(String.valueOf(this.cliente.getId()));
+            txtNome.setText(this.cliente.getNome());
+            txtCPF.setText(this.cliente.getCPF());
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            txtData.setText(sdf.format(this.cliente.getDataNascimento()));
+        }
     }
     private void criaPaineis(){
         add(jpnBotao,"South");
