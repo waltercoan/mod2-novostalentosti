@@ -43,6 +43,18 @@ public class FaseDaObra {
     }    
 
     public float calcularValorDaFaseDaObra(){
-        return 0;
+        float valTotFase = 0;
+        valTotFase += getEncarregado().getSalario();
+        for(var umConstrutor : getListaConstrutores()){
+            valTotFase += umConstrutor.getSalario();   
+        }
+
+        for(var umItem : getListaItens()){
+            var qtd = umItem.getQuantidade();
+            var preco = umItem.getProduto().getPreco();
+            valTotFase += (qtd * preco);
+        }
+
+        return valTotFase;
     }
 }
